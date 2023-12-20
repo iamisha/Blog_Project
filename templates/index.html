@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+
+{% block title %}
+hello
+{% endblock title %}
+
+
+{% block content %}
+
+<div class="row">
+    {% for post in posts %}
+    <div class="col-sm-4">
+        <div class="card">
+            <img class="card-img-top" src="{{ post.img.url }}" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">{{ post.title }}</h5>
+                <p class="card-text">{{ post.desc }}</p>
+                <p class="card-text">{{ post.author.username }}</p>
+                <a href="{% url 'details' post.id %}" class="btn btn-sm btn-primary">view</a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+{% endblock content %}
