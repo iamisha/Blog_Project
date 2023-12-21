@@ -53,6 +53,7 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'blog_project.urls'
 
+LOGIN_URL="login"
 
 TEMPLATES = [
     {

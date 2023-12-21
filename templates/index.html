@@ -18,6 +18,10 @@ hello
                 <p class="card-text">{{ post.desc }}</p>
                 <p class="card-text">{{ post.author.username }}</p>
                 <a href="{% url 'details' post.id %}" class="btn btn-sm btn-primary">view</a>
+                {% if user.is_authenticated and user == post.author %}
+                <a href="{% url 'update_post' post.id %}" class="btn btn-sm btn-primary">update</a>
+                <a href="{% url 'delete_post' post.id %}" class="btn btn-sm btn-primary">delete</a>
+                {% endif %}
             </div>
         </div>
     </div>
